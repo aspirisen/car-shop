@@ -30,18 +30,18 @@ export function CarCard(props: CarCardProps) {
       />
 
       <Collapse isOpen={isDetailsOpen}>
-        <SpaceTable>
+        <CarData>
           <Tabs tabs={props.car.features.map((f) => ({ caption: f.name }))} />
           <Button kind="link" underline onClick={switchDetails}>
             <Text gordita size="m" color="Blue" weight={500}>
               Close
             </Text>
           </Button>
-        </SpaceTable>
+        </CarData>
 
-        <SpaceTable>
+        <CarData>
           <SpecTable specs={props.car.features[0].attributes} />
-        </SpaceTable>
+        </CarData>
 
         <CarsCarousel>
           <Carousel
@@ -66,8 +66,8 @@ const CarsCarousel = styled("div")`
   padding: 18px 13px;
 `;
 
-const SpaceTable = styled("div")`
-  padding: 20px 30px;
+const CarData = styled("div")`
   display: flex;
   justify-content: space-between;
+  margin: 20px 30px;
 `;

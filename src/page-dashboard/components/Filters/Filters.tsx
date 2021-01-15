@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Text } from "ui-kit/Text";
 import { Slider } from "ui-kit/Slider";
+import { Box } from "ui-kit/Box";
 import { Checkbox } from "ui-kit/Checkbox";
 import { Underline } from "ui-kit/Underline";
 
@@ -14,27 +15,28 @@ export function Filters() {
         </Caption>
       </Underline>
 
-      <BigSpace>
+      <Box marginBottom="l">
         <Tags>
-          <Space>
+          <Box marginBottom="xm">
             <Checkbox caption="Free" />
-          </Space>
+          </Box>
 
-          <Space>
+          <Box marginBottom="xm">
             <Checkbox caption="Cool" />
-          </Space>
+          </Box>
 
-          <Space>
+          <Box marginBottom="xm">
             <Checkbox caption="Fun" />
-          </Space>
+          </Box>
 
           <Checkbox caption="Sexy" />
         </Tags>
-      </BigSpace>
+      </Box>
 
-      <BigSpace>
+      <Box marginBottom="l">
         <Slider caption="People dig it" kind="slider" />
-      </BigSpace>
+      </Box>
+
       <Slider caption="Helps me with job search" kind="range" />
     </FiltersContainer>
   );
@@ -53,12 +55,4 @@ const Tags = styled("div")`
   padding: 12px 0;
   display: flex;
   flex-flow: column;
-`;
-
-const Space = styled("div")`
-  margin-bottom: 6px;
-`;
-
-const BigSpace = styled("div")`
-  margin-bottom: 24px;
 `;

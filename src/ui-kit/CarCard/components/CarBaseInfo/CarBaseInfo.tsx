@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Icon } from "ui-kit/Icon";
 import { Text } from "ui-kit/Text";
+import { Box } from "ui-kit/Box";
 import { Stars } from "ui-kit/Stars";
 import { ImagePreview } from "ui-kit/ImagePreview";
 import { Button } from "ui-kit/Button";
@@ -39,11 +40,11 @@ export function CarBaseInfo(props: CarBaseInfoProps) {
 
         <Seller>
           <Icon name="user" size="m"></Icon>
-          <Space>
+          <Box paddingLeft="s" paddingRight="s">
             <Text avenir size="s">
               Sold by: <Button kind="link">{props.car.soldBy}</Button>
             </Text>
-          </Space>
+          </Box>
           <Stars stars={props.car.rating} />
         </Seller>
       </BasicInfo>
@@ -70,11 +71,6 @@ const CarName = styled("div")`
 const BasicInfo = styled("div")`
   display: flex;
   flex-flow: column;
-`;
-
-const Space = styled("span")`
-  display: inline-block;
-  padding: 0 8px;
 `;
 
 const Description = styled("div")`

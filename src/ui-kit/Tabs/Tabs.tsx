@@ -51,7 +51,7 @@ export function Tabs(props: TabsProps) {
   return (
     <TabsContainer>
       {tabs.map(({ tab, ref }) => (
-        <TabItemWrapper>
+        <TabItemWrapper key={tab.caption}>
           <TabItem
             ref={ref}
             tab={tab}
