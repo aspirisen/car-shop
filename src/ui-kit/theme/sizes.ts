@@ -1,1 +1,1 @@
-export type Sizes = "xs" | "s" | "m";
+export type Sizes = "xs" | "s" | "xm" | "m" | 'l';

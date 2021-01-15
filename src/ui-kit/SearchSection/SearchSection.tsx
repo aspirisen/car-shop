@@ -1,14 +1,19 @@
+import React from "react";
 import styled from "styled-components";
+import { Button } from "ui-kit/Button";
 import { Stat } from "ui-kit/Stat";
 import { Text } from "ui-kit/Text";
+import { Underline } from "ui-kit/Underline";
 
 export function SearchSection() {
   return (
     <SearchSectionContainer>
       <Results>
-        <Text gordita size="s" color="White">
-          283 Results for:
-        </Text>
+        <Underline>
+          <Text gordita size="m" color="White" weight={500}>
+            283 Results for:
+          </Text>
+        </Underline>
       </Results>
 
       <Stats>
@@ -16,6 +21,11 @@ export function SearchSection() {
         <Stat name="Color" value="Black" hasMargin />
         <Stat name="Year" value="2009" hasMargin />
         <Stat name="Miles" value="Less than 1,000" hasMargin />
+        <Button kind="link">
+          <Text gordita size="l" color="Blue">
+            Redo Search
+          </Text>
+        </Button>
       </Stats>
     </SearchSectionContainer>
   );

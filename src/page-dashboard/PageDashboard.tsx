@@ -3,11 +3,9 @@ import styled from "styled-components";
 import { UserContext } from "core/UserContext";
 import { Page } from "ui-kit/Page";
 import { Menu } from "ui-kit/Menu";
-import { Text } from "ui-kit/Text";
-import { Slider } from "ui-kit/Slider";
-import { Checkbox } from "ui-kit/Checkbox";
 import { SearchSection } from "ui-kit/SearchSection";
 import { Car } from "ui-kit/Car";
+import { Filters } from "./components/Filters";
 
 export function PageDashboard() {
   const user = React.useContext(UserContext);
@@ -18,27 +16,9 @@ export function PageDashboard() {
       <SearchSection />
 
       <Content>
-        <div>
-          <Text gordita size="s">
-            Filters
-          </Text>
-          <Checkbox caption="Free" />
-          <Checkbox caption="Cool" />
-          <Checkbox caption="Fun" />
-          <Checkbox caption="Sexy" />
+        <Filters />
 
-          <Text gordita size="s">
-            People dig it
-          </Text>
-          <Slider />
-
-          <Text gordita size="s">
-            Helps me with job search
-          </Text>
-          <Slider />
-        </div>
-
-        <div style={{ width: "100%" }}>
+        <div style={{ width: "100%", display: "none" }}>
           <Car />
         </div>
       </Content>
