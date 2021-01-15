@@ -18,7 +18,7 @@ export function PageDashboard() {
       <Content>
         <Filters />
 
-        <div style={{ width: "100%", display: "none" }}>
+        <div>
           <Car />
         </div>
       </Content>

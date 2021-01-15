@@ -7,7 +7,7 @@ import { Underline } from "ui-kit/Underline";
 
 export function Filters() {
   return (
-    <div>
+    <FiltersContainer>
       <Underline color="Black" size="m" space="xs">
         <Caption gordita size="m" weight={500}>
           Filters
@@ -36,9 +36,14 @@ export function Filters() {
         <Slider caption="People dig it" kind="slider" />
       </BigSpace>
       <Slider caption="Helps me with job search" kind="range" />
-    </div>
+    </FiltersContainer>
   );
 }
+
+const FiltersContainer = styled("div")`
+  flex-shrink: 0;
+  margin-right: 60px;
+`;
 
 const Caption = styled(Text)`
   padding-right: 30px;

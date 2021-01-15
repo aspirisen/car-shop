@@ -1,10 +1,16 @@
 import styled, { css } from "styled-components";
 
-export type ButtonKind = "link";
-
-export interface ButtonProps {
-  kind: ButtonKind;
+export interface ButtonLink {
+  kind: "link";
+  underline?: boolean;
 }
+
+export interface ButtonPlain {
+  kind: "plain";
+  big?: boolean;
+}
+
+export type ButtonProps = ButtonLink | ButtonPlain;
 
 export const Button = styled("button")<ButtonProps>`
   border: none;
@@ -17,13 +23,33 @@ export const Button = styled("button")<ButtonProps>`
       case "link":
         return css`
           color: #008cdd;
-          text-decoration: underline;
-          text-underline-offset: 3px;
+          ${props.underline &&
+          css`
+            text-decoration: underline;
+            text-underline-offset: 3px;
+          `};
 
           &:focus,
           &:hover,
           &:active {
-            opacity: 0.8
+            opacity: 0.8;
+          }
+        `;
+
+      case "plain":
+        return css`
+          border: solid 1px #dddddd;
+          background-color: #003554;
+
+          ${props.big &&
+          css`
+            padding: 50px;
+          `};
+
+          &:hover {
+            > * {
+              opacity: 0.5;
+            }
           }
         `;
     }

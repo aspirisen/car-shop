@@ -2,8 +2,11 @@ import styled from "styled-components";
 import { Icon } from "ui-kit/Icon";
 import { Text } from "ui-kit/Text";
 import { Stars } from "ui-kit/Stars";
+import { SpecTable } from "ui-kit/SpecTable";
 import { Carousel } from "ui-kit/Carousel";
 import { Tabs } from "ui-kit/Tabs";
+import { Button } from "ui-kit/Button";
+import { Underline } from "ui-kit/Underline";
 
 export function Car() {
   return (
@@ -13,7 +16,7 @@ export function Car() {
         <BasicInfo>
           <Description>
             <CarName>
-              <Text gordita size="s" color="GrayDark">
+              <Text gordita size="m" color="GrayDark" weight={500}>
                 Brand New Never Used Mercedes Benz
               </Text>
             </CarName>
@@ -21,7 +24,11 @@ export function Car() {
             <Text avenir size="s" color="GrayDark">
               This is a random description of this car. It’s only a couple words
               because this is a test project. Good luck!
-              <ViewMore>View Details</ViewMore>
+              <Button kind="link" underline>
+                <Text avenir size="s" color="Blue">
+                  View Details
+                </Text>
+              </Button>
             </Text>
           </Description>
 
@@ -29,18 +36,24 @@ export function Car() {
             <Icon name="user" size="m"></Icon>
             <Space>
               <Text avenir size="s">
-                Sold by: <span style={{ color: "#008cdd" }}>James Raj</span>
+                Sold by: <Button kind="link">James Raj</Button>
               </Text>
             </Space>
             <Stars stars={1} />
           </Seller>
         </BasicInfo>
 
-        <Buy>Buy</Buy>
+        <Button kind="plain" big>
+          <Underline color="White" space="m">
+            <Text gordita size="m" color="White">
+              Buy
+            </Text>
+          </Underline>
+        </Button>
       </div>
 
       <div>
-        <div style={{padding: "20px 30px"}}>
+        <SpaceTable>
           <Tabs
             tabs={[
               { caption: "Specs" },
@@ -48,31 +61,33 @@ export function Car() {
               { caption: "Parts" },
             ]}
           />
-        </div>
+        </SpaceTable>
 
-        <table>
-          <tr>
-            <td>Turbo-Engine</td>
-            <td>This car rips hard</td>
-          </tr>
-          <tr>
-            <td>Nitrus</td>
-            <td>It’s like Fast & Furious</td>
-          </tr>
-          <tr>
-            <td>8 cup-holders</td>
-            <td>For all your friends</td>
-          </tr>
-          <tr>
-            <td>Vin Diesel Mode</td>
-            <td>Will make you a protein shake</td>
-          </tr>
-        </table>
+        <SpaceTable>
+          <SpecTable
+            specs={[
+              { name: "Turbo-Engine", value: "This car rips hard" },
+              {
+                name: "Nitrus",
+                value: "It’s like Fast & Furious",
+              },
+              {
+                name: "8 cup-holders",
+                value: "For all your friends",
+              },
+              {
+                name: "Vin Diesel Mode",
+                value:
+                  "Will make you a protein shakeWill make you a protein shake",
+              },
+            ]}
+          />
+        </SpaceTable>
       </div>
 
-      <div style={{ width: "100%" }}>
+      {/* <div style={{ width: "100%" }}>
         <Carousel />
-      </div>
+      </div> */}
     </CarContainer>
   );
 }
@@ -114,23 +129,6 @@ const CarImage = styled("img")`
   object-fit: cover;
 `;
 
-const ViewMore = styled("button")`
-  font-family: Avenir;
-  font-size: 12px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 0.19px;
-  color: #008cdd;
-  background: transparent;
-  border: none;
-`;
-
-const Buy = styled("div")`
-  padding: 53px 39px;
-  border: solid 1px #dddddd;
-  background-color: #003554;
-  color: white;
-  font-family: Gordita;
+const SpaceTable = styled("div")`
+  padding: 20px 30px;
 `;
