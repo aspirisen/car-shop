@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { Reset } from "styled-reset";
-import gorditasRegular from "ui-kit/assets/fonts/gorditas/Gorditas-Regular.ttf";
-import gorditasBold from "ui-kit/assets/fonts/gorditas/Gorditas-Bold.ttf";
+import gorditaBold from "ui-kit/assets/fonts/gordita/Gordita-Bold.ttf";
+import gorditaRegular from "ui-kit/assets/fonts/gordita/Gordita-Regular.ttf";
 import AvenirLTStd from "ui-kit/assets/fonts/avenir/AvenirLTStd-Book.otf";
 
 export function Root(props: React.PropsWithChildren<{}>) {
@@ -16,16 +16,17 @@ export function Root(props: React.PropsWithChildren<{}>) {
 }
 
 export const Fonts = createGlobalStyle`
+
   @font-face {
-    font-family: "Gorditas";
-    font-weight: bold;
-    src: url("${gorditasBold}") format("truetype");
+    font-family: "Gordita";
+    src: url("${gorditaBold}");
+    font-weight: 'bold';
   }
 
   @font-face {
-    font-family: "Gorditas";
-    font-weight: initial;
-    src: url("${gorditasRegular}");
+    font-family: "Gordita";
+    src: url("${gorditaRegular}");
+    font-weight: 'regular';
   }
 
   @font-face {

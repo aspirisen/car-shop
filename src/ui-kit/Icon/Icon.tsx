@@ -15,6 +15,7 @@ export interface IconProps
 const IconSizes: Record<Sizes, number> = {
   xs: 14,
   s: 16,
+  m: 18,
 };
 
 export function Icon(props: IconProps) {

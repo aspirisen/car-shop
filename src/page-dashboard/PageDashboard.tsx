@@ -2,6 +2,7 @@ import React from "react";
 import { UserContext } from "core/UserContext";
 import { Page } from "ui-kit/Page";
 import { Menu } from "ui-kit/Menu";
+import { SearchSection } from "ui-kit/SearchSection";
 
 export function PageDashboard() {
   const user = React.useContext(UserContext);
@@ -9,6 +10,7 @@ export function PageDashboard() {
   return (
     <Page>
       <Menu userName={user.userName} />
+      <SearchSection />
     </Page>
   );
 }
