@@ -38,7 +38,7 @@ export function PageDashboard() {
           <Slider />
         </div>
 
-        <div>
+        <div style={{ width: "100%" }}>
           <Car />
         </div>
       </Content>
