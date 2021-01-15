@@ -3,27 +3,57 @@ import styled from "styled-components";
 import { Text } from "ui-kit/Text";
 import { Slider } from "ui-kit/Slider";
 import { Checkbox } from "ui-kit/Checkbox";
+import { Underline } from "ui-kit/Underline";
 
 export function Filters() {
   return (
     <div>
-      <Text gordita size="s">
-        Filters
-      </Text>
-      <Checkbox caption="Free" />
-      <Checkbox caption="Cool" />
-      <Checkbox caption="Fun" />
-      <Checkbox caption="Sexy" />
+      <Underline color="Black" size="m" space="xs">
+        <Caption gordita size="m" weight={500}>
+          Filters
+        </Caption>
+      </Underline>
 
-      <Text gordita size="s">
-        People dig it
-      </Text>
-      <Slider />
+      <BigSpace>
+        <Tags>
+          <Space>
+            <Checkbox caption="Free" />
+          </Space>
 
-      <Text gordita size="s">
-        Helps me with job search
-      </Text>
-      <Slider />
+          <Space>
+            <Checkbox caption="Cool" />
+          </Space>
+
+          <Space>
+            <Checkbox caption="Fun" />
+          </Space>
+
+          <Checkbox caption="Sexy" />
+        </Tags>
+      </BigSpace>
+
+      <BigSpace>
+        <Slider caption="People dig it" kind="slider" />
+      </BigSpace>
+      <Slider caption="Helps me with job search" kind="range" />
     </div>
   );
 }
+
+const Caption = styled(Text)`
+  padding-right: 30px;
+`;
+
+const Tags = styled("div")`
+  padding: 12px 0;
+  display: flex;
+  flex-flow: column;
+`;
+
+const Space = styled("div")`
+  margin-bottom: 6px;
+`;
+
+const BigSpace = styled("div")`
+  margin-bottom: 24px;
+`;

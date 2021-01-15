@@ -30,4 +30,5 @@ const Content = styled("div")`
   display: flex;
   max-width: 1024px;
   margin: 0 auto;
+  padding-top: 26px;
 `;

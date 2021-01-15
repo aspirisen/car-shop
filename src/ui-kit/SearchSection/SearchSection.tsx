@@ -9,7 +9,7 @@ export function SearchSection() {
   return (
     <SearchSectionContainer>
       <Results>
-        <Underline>
+        <Underline color="Blue" space="m">
           <Text gordita size="m" color="White" weight={500}>
             283 Results for:
           </Text>
