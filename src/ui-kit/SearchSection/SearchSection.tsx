@@ -21,7 +21,7 @@ export function SearchSection() {
         <Stat name="Color" value="Black" hasMargin />
         <Stat name="Year" value="2009" hasMargin />
         <Stat name="Miles" value="Less than 1,000" hasMargin />
-        <Button kind="link">
+        <Button kind="link" underline>
           <Text gordita size="l" color="Blue">
             Redo Search
           </Text>

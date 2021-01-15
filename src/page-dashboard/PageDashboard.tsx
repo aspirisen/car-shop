@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { UserContext } from "core/UserContext";
+import { StorageContext } from "core/StorageContext";
 import { Page } from "ui-kit/Page";
 import { Menu } from "ui-kit/Menu";
 import { SearchSection } from "ui-kit/SearchSection";
-import { Car } from "ui-kit/Car";
+import { CarCard } from "ui-kit/CarCard";
 import { Filters } from "./components/Filters";
 
 export function PageDashboard() {
   const user = React.useContext(UserContext);
+  const storage = React.useContext(StorageContext);
 
   return (
     <Page>
@@ -19,7 +21,9 @@ export function PageDashboard() {
         <Filters />
 
         <CarsList>
-          <Car />
+          {storage.cars.map((c) => (
+            <CarCard car={c} />
+          ))}
         </CarsList>
       </Content>
     </Page>
@@ -36,4 +40,12 @@ const Content = styled("div")`
 
 const CarsList = styled("div")`
   min-width: 0;
+
+  > * {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
 `;
