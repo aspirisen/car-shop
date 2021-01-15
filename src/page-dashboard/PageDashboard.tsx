@@ -18,9 +18,9 @@ export function PageDashboard() {
       <Content>
         <Filters />
 
-        <div>
+        <CarsList>
           <Car />
-        </div>
+        </CarsList>
       </Content>
     </Page>
   );
@@ -30,5 +30,10 @@ const Content = styled("div")`
   display: flex;
   max-width: 1024px;
   margin: 0 auto;
-  padding-top: 26px;
+  padding: 26px 0;
+  min-width: 0;
+`;
+
+const CarsList = styled("div")`
+  min-width: 0;
 `;

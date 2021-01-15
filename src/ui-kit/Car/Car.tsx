@@ -85,9 +85,37 @@ export function Car() {
         </SpaceTable>
       </div>
 
-      {/* <div style={{ width: "100%" }}>
-        <Carousel />
-      </div> */}
+      <CarsCarousel>
+        <Carousel
+          images={[
+            {
+              name: "A",
+              src:
+                "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+            },
+            {
+              name: "A",
+              src:
+                "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+            },
+            {
+              name: "A",
+              src:
+                "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+            },
+            {
+              name: "A",
+              src:
+                "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+            },
+            {
+              name: "A",
+              src:
+                "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+            },
+          ]}
+        />
+      </CarsCarousel>
     </CarContainer>
   );
 }
@@ -100,6 +128,10 @@ const CarContainer = styled("div")`
 
 const CarName = styled("div")`
   margin-bottom: 6px;
+`;
+
+const CarsCarousel = styled("div")`
+  padding: 18px 13px;
 `;
 
 const BasicInfo = styled("div")`
