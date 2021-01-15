@@ -28,7 +28,7 @@ const ImagePreviewContainer = styled("span")`
 
 const Image = styled("img")`
   width: 150px;
-  height: 100%initial;
+  height: 100%;
   object-fit: cover;
 `;
 

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { SpecTable } from "ui-kit/SpecTable";
 import { Carousel } from "ui-kit/Carousel";
 import { Tabs } from "ui-kit/Tabs";
+import { Collapse } from "ui-kit/Collapse";
 import { Text } from "ui-kit/Text";
 import { Button } from "ui-kit/Button";
 import { Car } from "core/StorageContext";
@@ -28,31 +29,29 @@ export function CarCard(props: CarCardProps) {
         switchDetails={switchDetails}
       />
 
-      {isDetailsOpen && (
-        <>
-          <SpaceTable>
-            <Tabs tabs={props.car.features.map((f) => ({ caption: f.name }))} />
-            <Button kind="link" underline onClick={switchDetails}>
-              <Text gordita size="m" color="Blue" weight={500}>
-                Close
-              </Text>
-            </Button>
-          </SpaceTable>
+      <Collapse isOpen={isDetailsOpen}>
+        <SpaceTable>
+          <Tabs tabs={props.car.features.map((f) => ({ caption: f.name }))} />
+          <Button kind="link" underline onClick={switchDetails}>
+            <Text gordita size="m" color="Blue" weight={500}>
+              Close
+            </Text>
+          </Button>
+        </SpaceTable>
 
-          <SpaceTable>
-            <SpecTable specs={props.car.features[0].attributes} />
-          </SpaceTable>
+        <SpaceTable>
+          <SpecTable specs={props.car.features[0].attributes} />
+        </SpaceTable>
 
-          <CarsCarousel>
-            <Carousel
-              images={props.car.photos.map((src) => ({
-                src,
-                name: props.car.name,
-              }))}
-            />
-          </CarsCarousel>
-        </>
-      )}
+        <CarsCarousel>
+          <Carousel
+            images={props.car.photos.map((src) => ({
+              src,
+              name: props.car.name,
+            }))}
+          />
+        </CarsCarousel>
+      </Collapse>
     </CarContainer>
   );
 }
