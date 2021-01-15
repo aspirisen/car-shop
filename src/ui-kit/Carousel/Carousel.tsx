@@ -21,7 +21,7 @@ export function Carousel(props: CarouselProps) {
       prevArrow={<PrevArrow />}
     >
       {props.images.map((i) => (
-        <img src={i.src} alt={i.name} />
+        <img src={i.src} alt={i.name} key={i.src}/>
       ))}
     </SliderWrapper>
   );

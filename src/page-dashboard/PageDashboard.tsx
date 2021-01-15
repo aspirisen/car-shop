@@ -22,7 +22,7 @@ export function PageDashboard() {
 
         <CarsList>
           {storage.cars.map((c) => (
-            <CarCard car={c} />
+            <CarCard key={c.id} car={c} />
           ))}
         </CarsList>
       </Content>

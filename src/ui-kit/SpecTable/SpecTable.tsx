@@ -15,7 +15,7 @@ export function SpecTable(props: SpecTableProps) {
     <SpecTableContainer>
       <tbody>
         {props.specs.map((s) => (
-          <tr>
+          <tr key={s.name}>
             <SpecCell>
               <Text avenir size="m" weight={600} color="GrayDark">
                 {s.name}

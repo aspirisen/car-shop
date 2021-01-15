@@ -14,7 +14,7 @@ export interface CarCardProps {
 }
 
 export function CarCard(props: CarCardProps) {
-  const [isDetailsOpen, setIsDetailsOpen] = React.useState(false);
+  const [isDetailsOpen, setIsDetailsOpen] = React.useState(true);
 
   const switchDetails = React.useCallback(
     () => setIsDetailsOpen((prev) => !prev),

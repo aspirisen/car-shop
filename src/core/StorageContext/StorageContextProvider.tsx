@@ -14,9 +14,9 @@ export function StorageContextProvider(props: React.PropsWithChildren<{}>) {
   );
 }
 
-const createCar = () => {
+const createCar = (_: null, i: number) => {
   const result: Car = {
-    id: Date.now().toString(),
+    id: i.toString(),
     name: "Brand New Never Used Mercedes Benz",
     description:
       "This is a random description of this car. It’s only a couple words because this is a test project. Good luck!",
