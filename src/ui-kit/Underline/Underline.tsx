@@ -9,7 +9,6 @@ export interface UnderlineProps {
   size?: Sizes;
   space: Sizes;
   hideLine?: boolean;
-  leftShift?: number;
 }
 
 const UnderlineSizes: Record<Sizes, number> = {
@@ -28,26 +27,16 @@ const UnderlineSpace: Record<Sizes, number> = {
   l: 3,
 };
 
-export const Underline = React.forwardRef<
-  HTMLElement,
-  React.PropsWithChildren<UnderlineProps>
->((props, ref) => {
+export function Underline(props: React.PropsWithChildren<UnderlineProps>) {
   const { children, ...rest } = props;
 
   return (
     <UnderlineContainer>
       {children}
-      <Line
-        {...rest}
-        ref={ref}
-        style={{
-          visibility: props.hideLine ? "hidden" : "visible",
-          left: props.leftShift,
-        }}
-      />
+      <Line {...rest} />
     </UnderlineContainer>
   );
-});
+}
 
 const UnderlineContainer = styled("span")`
   position: relative;
